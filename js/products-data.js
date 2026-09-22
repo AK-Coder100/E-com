@@ -1,0 +1,241 @@
+// Brand Wardrobe - Ruby Garments Udyog Enterprises Product Catalog Data
+
+const PRODUCTS_DATA = [
+  {
+    id: "bw-101",
+    name: "Oversized Vintage Acid Wash Graphic Tee",
+    category: "oversized-tees",
+    categoryLabel: "Oversized Tees",
+    originalPrice: 1499,
+    price: 699,
+    discount: "53% OFF",
+    rating: 4.8,
+    reviewsCount: 142,
+    stock: 7,
+    isBestSeller: true,
+    isNew: false,
+    image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=800&q=80",
+    hoverImage: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80"
+    ],
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: [
+      { name: "Charcoal Grey", code: "#333333" },
+      { name: "Vintage Black", code: "#1a1a1a" },
+      { name: "Washed Olive", code: "#4a5340" }
+    ],
+    description: "Crafted from heavy 240 GSM pure combed cotton with a relaxed drop-shoulder silhouette and aesthetic retro typography print. Manufactured with high-density dyes for enduring vibrancy.",
+    fabric: "100% Combed Cotton (240 GSM Heavyweight)",
+    policyNotice: "Strict Non-Refundable & Non-Returnable item by Ruby Garments Udyog Enterprises."
+  },
+  {
+    id: "bw-102",
+    name: "Classic Luxury Pique Polo Shirt",
+    category: "polos",
+    categoryLabel: "Polo T-Shirts",
+    originalPrice: 1799,
+    price: 799,
+    discount: "56% OFF",
+    rating: 4.9,
+    reviewsCount: 98,
+    stock: 12,
+    isBestSeller: true,
+    isNew: true,
+    image: "https://images.unsplash.com/photo-1625910513413-5a219e24618e?auto=format&fit=crop&w=800&q=80",
+    hoverImage: "https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1625910513413-5a219e24618e?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=800&q=80"
+    ],
+    sizes: ["M", "L", "XL", "XXL"],
+    colors: [
+      { name: "Royal Navy", code: "#001f3f" },
+      { name: "Emerald Green", code: "#0f5132" },
+      { name: "Burgundy Red", code: "#800020" }
+    ],
+    description: "Refined honeycomb knit polo shirt featuring tipping collar detail, mother-of-pearl buttons, and ribbed cuffs. Impeccable drape for smart casual everyday wear.",
+    fabric: "100% Bio-Washed Pique Cotton (220 GSM)",
+    policyNotice: "Strict Non-Refundable & Non-Returnable item by Ruby Garments Udyog Enterprises."
+  },
+  {
+    id: "bw-103",
+    name: "Downtown Striped Relaxed Cuban Collar Shirt",
+    category: "shirts",
+    categoryLabel: "Casual Shirts",
+    originalPrice: 1999,
+    price: 899,
+    discount: "55% OFF",
+    rating: 4.7,
+    reviewsCount: 64,
+    stock: 5,
+    isBestSeller: false,
+    isNew: true,
+    image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80",
+    hoverImage: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80"
+    ],
+    sizes: ["S", "M", "L", "XL"],
+    colors: [
+      { name: "Sage Stripe", code: "#7b9084" },
+      { name: "Sand Beige", code: "#d8cbb5" },
+      { name: "Sky Blue", code: "#6ea8fe" }
+    ],
+    description: "Breathable resort-ready Cuban camp collar shirt in textured vertical stripes. Features clean wooden buttons and a relaxed boxy cut tailored for warm climate comfort.",
+    fabric: "Linen-Cotton Blend (Pre-Shrunk)",
+    policyNotice: "Strict Non-Refundable & Non-Returnable item by Ruby Garments Udyog Enterprises."
+  },
+  {
+    id: "bw-104",
+    name: "Urban Tactical Heavyweight Streetwear Hoodie",
+    category: "winterwear",
+    categoryLabel: "Winter Wear",
+    originalPrice: 2499,
+    price: 1199,
+    discount: "52% OFF",
+    rating: 4.9,
+    reviewsCount: 210,
+    stock: 4,
+    isBestSeller: true,
+    isNew: false,
+    image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80",
+    hoverImage: "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=800&q=80"
+    ],
+    sizes: ["M", "L", "XL", "XXL"],
+    colors: [
+      { name: "Pitch Black", code: "#111111" },
+      { name: "Heather Grey", code: "#777777" },
+      { name: "Mocha Brown", code: "#4b3621" }
+    ],
+    description: "Ultra-plush 380 GSM brushed fleece hooded sweatshirt with double-layered hood, kangaroo pocket, ribbed hems, and minimalist brand tag.",
+    fabric: "80% Cotton / 20% Polyester Heavy Fleece (380 GSM)",
+    policyNotice: "Strict Non-Refundable & Non-Returnable item by Ruby Garments Udyog Enterprises."
+  },
+  {
+    id: "bw-105",
+    name: "Relaxed Fit 6-Pocket Tactical Cargo Pants",
+    category: "denims",
+    categoryLabel: "Bottoms & Pants",
+    originalPrice: 2199,
+    price: 999,
+    discount: "55% OFF",
+    rating: 4.8,
+    reviewsCount: 130,
+    stock: 8,
+    isBestSeller: false,
+    isNew: true,
+    image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=800&q=80",
+    hoverImage: "https://images.unsplash.com/photo-1517445312882-bc9910d016b7?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1517445312882-bc9910d016b7?auto=format&fit=crop&w=800&q=80"
+    ],
+    sizes: ["30", "32", "34", "36", "38"],
+    colors: [
+      { name: "Desert Sand", code: "#c2b280" },
+      { name: "Olive Green", code: "#3c4d34" },
+      { name: "Midnight Black", code: "#1c1c1c" }
+    ],
+    description: "Heavy-duty twill cargo pants built with reinforced knee panels, spacious bellows pockets with snap closures, and elasticated ankle adjusters.",
+    fabric: "100% Cotton Canvas Twill (290 GSM)",
+    policyNotice: "Strict Non-Refundable & Non-Returnable item by Ruby Garments Udyog Enterprises."
+  },
+  {
+    id: "bw-106",
+    name: "Japanese Selvedge Denim Straight Fit Jeans",
+    category: "denims",
+    categoryLabel: "Bottoms & Pants",
+    originalPrice: 2899,
+    price: 1299,
+    discount: "55% OFF",
+    rating: 4.9,
+    reviewsCount: 185,
+    stock: 6,
+    isBestSeller: true,
+    isNew: false,
+    image: "https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&w=800&q=80",
+    hoverImage: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80"
+    ],
+    sizes: ["30", "32", "34", "36"],
+    colors: [
+      { name: "Indigo Blue", code: "#1a2a4b" },
+      { name: "Washed Grey", code: "#595959" },
+      { name: "Raw Black", code: "#0d0d0d" }
+    ],
+    description: "Authentic red-line selvedge denim crafted on traditional shuttle looms. Enzyme washed for exceptional softness without compromising durable rigid structure.",
+    fabric: "13.5 oz Raw & Enzyme Washed Cotton Denim",
+    policyNotice: "Strict Non-Refundable & Non-Returnable item by Ruby Garments Udyog Enterprises."
+  },
+  {
+    id: "bw-107",
+    name: "Tokyo Cyberpunk Printed Oversized Tee",
+    category: "oversized-tees",
+    categoryLabel: "Oversized Tees",
+    originalPrice: 1399,
+    price: 649,
+    discount: "54% OFF",
+    rating: 4.7,
+    reviewsCount: 88,
+    stock: 9,
+    isBestSeller: false,
+    isNew: true,
+    image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
+    hoverImage: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=800&q=80"
+    ],
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: [
+      { name: "Cyber Black", code: "#0e0e0e" },
+      { name: "Off White", code: "#f5f5f0" }
+    ],
+    description: "Futuristic street-art back print paired with subtle minimal chest Kanji embroidery. Premium silicone-washed fabric that retains shape wash after wash.",
+    fabric: "100% Super-Combed Cotton (240 GSM)",
+    policyNotice: "Strict Non-Refundable & Non-Returnable item by Ruby Garments Udyog Enterprises."
+  },
+  {
+    id: "bw-108",
+    name: "Essential 3-Pack Premium Polo & Tee Combo",
+    category: "combos",
+    categoryLabel: "Combo Packs",
+    originalPrice: 3999,
+    price: 1599,
+    discount: "60% OFF",
+    rating: 5.0,
+    reviewsCount: 312,
+    stock: 15,
+    isBestSeller: true,
+    isNew: true,
+    image: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=800&q=80",
+    hoverImage: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=800&q=80"
+    ],
+    sizes: ["M", "L", "XL", "XXL"],
+    colors: [
+      { name: "Multicolor Pack (Black/White/Navy)", code: "#1e293b" }
+    ],
+    description: "Mega Value Bundle curated by Ruby Garments Udyog: Contains 1 Luxury Polo, 1 Oversized Graphic Tee, and 1 Classic Solid Crew Neck. Unbeatable factory-direct pricing.",
+    fabric: "Assorted 100% Bio-Washed Combed Cotton",
+    policyNotice: "Strict Non-Refundable & Non-Returnable item by Ruby Garments Udyog Enterprises."
+  }
+];
+
+const PROMO_CODES = {
+  "RUBY10": { discountPercent: 10, description: "10% Off on all orders" },
+  "FIRSTBUY": { discountFlat: 100, minCart: 999, description: "₹100 Off on orders above ₹999" },
+  "BRAND50": { discountFlat: 50, minCart: 499, description: "₹50 Instant Discount" }
+};

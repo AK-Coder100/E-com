@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Brand Wardrobe | Ruby Garments Udyog Enterprises - Premium Apparel</title>
+  <meta name="description" content="Shop luxury oversized tees, classic polo shirts, resort casual shirts, and selvedge denim directly from Ruby Garments Udyog Enterprises. Owner: Pappu Singh. Strict Non-Refundable Policy." />
+  <meta name="theme-color" content="#0a0c10" />
+
+  <!-- Open Graph Meta -->
+  <meta property="og:site_name" content="Brand Wardrobe" />
+  <meta property="og:title" content="Brand Wardrobe | Ruby Garments Udyog Enterprises" />
+  <meta property="og:description" content="Exclusive streetwear, luxury polos & denim manufactured by Ruby Garments Udyog Enterprises (Pappu Singh)." />
+  <meta property="og:type" content="website" />
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Announcement Bar with Strict Policy Notice -->
+  <aside class="announcement-bar" aria-label="Store Announcement">
+    <div class="container announcement-content">
+      <div class="announcement-ticker">
+        <span class="badge-pulse">LIMITED OFFER</span>
+        <span>🔥 Flat 50% - 60% OFF Factory Direct Sale | <strong>All Sales Final: Strict Non-Returnable Policy</strong> | Office: Townhall, Gorakhpur</span>
+      </div>
+      <div class="announcement-links">
+        <a href="javascript:void(0)" onclick="openPolicyModal('refund-policy')">Non-Refundable Policy 🛡️</a>
+        <a href="javascript:void(0)" onclick="openPolicyModal('about-us')">Ruby Garments Udyog (Townhall Gorakhpur) 🏢</a>
+        <a href="javascript:void(0)" onclick="openPolicyModal('contact-us')">Customer Support 💬</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Header & Navigation -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <!-- Logo & Branding -->
+      <a href="#" class="brand-logo-wrap" title="RB Garment Enterprises - Brand Wardrobe">
+        <img src="assets/logo.png" alt="RB Garment Enterprises Logo" class="brand-logo-img" />
+        <div class="brand-title-group">
+          <span class="brand-title">BRAND WARDROBE</span>
+          <span class="brand-subtitle">RB Garments Udyog</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="main-nav-menu">
+          <li><a href="#catalog" class="nav-link active">Shop All</a></li>
+          <li><a href="#catalog" class="nav-link" onclick="document.querySelector('[data-category=oversized-tees]').click()">Oversized Tees</a></li>
+          <li><a href="#catalog" class="nav-link" onclick="document.querySelector('[data-category=polos]').click()">Polo Shirts</a></li>
+          <li><a href="#catalog" class="nav-link" onclick="document.querySelector('[data-category=shirts]').click()">Casual Shirts</a></li>
+          <li><a href="#catalog" class="nav-link" onclick="document.querySelector('[data-category=denims]').click()">Denim & Pants</a></li>
+          <li><a href="#catalog" class="nav-link" onclick="document.querySelector('[data-category=combos]').click()">Combo Deals 🔥</a></li>
+          <li><a href="javascript:void(0)" class="nav-link" onclick="openPolicyModal('about-us')">About Us</a></li>
+          <li><a href="javascript:void(0)" class="nav-link" onclick="openPolicyModal('refund-policy')" style="color: #fca5a5;">Policy</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons (Search, Wishlist, Cart) -->
+      <div class="header-actions">
+        <button class="action-btn" id="btn-search-trigger" onclick="openSearchModal()" title="Search Products (Ctrl+K)">
+          🔍
+        </button>
+        <button class="action-btn" id="btn-wishlist-trigger" onclick="showToast('You have ' + store.wishlist.length + ' items in your wishlist!', 'info')" title="Wishlist">
+          🤍
+          <span class="action-badge" id="wishlist-badge">0</span>
+        </button>
+        <button class="action-btn" id="btn-cart-trigger" onclick="openCartDrawer()" title="Shopping Cart">
+          🛒
+          <span class="action-badge" id="cart-badge">0</span>
+        </button>
+        <button class="action-btn mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Storefront Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-text-col">
+          <div class="hero-badge">
+            <span>✨</span> DIRECT FACTORY DISPATCH • RUBY GARMENTS UDYOG
+          </div>
+          <h1 class="hero-title">
+            Luxury Apparel, <br />
+            <span class="text-gradient">Engineered to Perfection.</span>
+          </h1>
+          <p class="hero-desc">
+            Discover heavy 240 GSM oversized tees, honeycomb pique polo knits, and Japanese selvedge denim direct from the factory of <strong>Ruby Garments Udyog Enterprises</strong> led by <strong>Pappu Singh</strong>.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#catalog" class="btn-primary">
+              🛍️ Explore Collection
+            </a>
+            <button class="btn-secondary" onclick="openPolicyModal('refund-policy')">
+              🛡️ Non-Refundable Policy
+            </button>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-value">240+</span>
+              <span class="stat-label">GSM Fabric Quality</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">50,000+</span>
+              <span class="stat-label">Happy Wardrobes</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">100%</span>
+              <span class="stat-label">Bio-Washed Cotton</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual-col">
+          <div class="hero-visual-card">
+            <span class="hero-policy-chip">🚫 Non-Returnable / Final Sale</span>
+            <img 
+              src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80" 
+              alt="Brand Wardrobe Luxury Apparel" 
+              class="hero-image-main" 
+            />
+            <div class="hero-floating-tag">
+              <div>
+                <div class="tag-title">Autumn Drop 2026 Collection</div>
+                <div class="tag-subtitle">Ruby Garments Udyog Enterprises • Flat 55% Off</div>
+              </div>
+              <a href="#catalog" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">Shop Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Features Bar -->
+    <section class="features-bar" aria-label="Store Guarantees">
+      <div class="container features-grid">
+        <div class="feature-box">
+          <div class="feature-icon-wrap">💎</div>
+          <div class="feature-info">
+            <h4>100% Combed Cotton</h4>
+            <p>Bio-washed heavy knit textiles</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon-wrap">🚚</div>
+          <div class="feature-info">
+            <h4>Express Fast Shipping</h4>
+            <p>Free delivery on orders above ₹999</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon-wrap">🏭</div>
+          <div class="feature-info">
+            <h4>Factory Direct Pricing</h4>
+            <p>Zero middlemen markups</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon-wrap">🛡️</div>
+          <div class="feature-info">
+            <h4>Strict Quality Assured</h4>
+            <p>Rigorous multi-stage check</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Policy Banner Notice -->
+    <section class="container" style="margin-top: 36px;">
+      <div style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: var(--radius-md); padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: gap; gap: 16px;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <span style="font-size: 1.8rem;">⚠️</span>
+          <div>
+            <h4 style="color: #f87171; font-size: 0.95rem; margin-bottom: 2px;">Notice from Ruby Garments Udyog Enterprises (Owner: Pappu Singh)</h4>
+            <p style="color: #fca5a5; font-size: 0.8125rem;">All articles are priced at subsidized direct factory rates and operate under a <strong>Strict Non-Refundable & No Return Policy</strong>.</p>
+          </div>
+        </div>
+        <button class="btn-secondary" style="padding: 8px 16px; font-size: 0.8rem; border-color: rgba(239, 68, 68, 0.4); color: #fca5a5;" onclick="openPolicyModal('refund-policy')">
+          Read Full Terms 📄
+        </button>
+      </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section class="container" id="catalog" style="padding: 60px 24px 20px;">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Trending Catalog Drops</h2>
+          <p class="section-subtitle">Curated collection by Ruby Garments Udyog Enterprises</p>
+        </div>
+        <div style="color: var(--accent-gold); font-size: 0.875rem; font-weight: 700;">
+          Showing In-Stock Items
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="filter-tabs-wrapper">
+        <button class="filter-pill active" data-category="all">All Products</button>
+        <button class="filter-pill" data-category="oversized-tees">Oversized Tees (240 GSM)</button>
+        <button class="filter-pill" data-category="polos">Luxury Polos</button>
+        <button class="filter-pill" data-category="shirts">Resort Shirts</button>
+        <button class="filter-pill" data-category="denims">Denims & Cargo</button>
+        <button class="filter-pill" data-category="winterwear">Hoodies & Winterwear</button>
+        <button class="filter-pill" data-category="combos">Value Combo Packs 🎁</button>
+      </div>
+
+      <!-- Dynamic Products Grid -->
+      <div class="products-grid" id="products-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- Customer Reviews & Testimonials -->
+    <section class="container" style="margin-top: 40px;">
+      <div style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 40px 32px;">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 36px;">
+          <h2 style="font-size: 1.8rem; margin-bottom: 8px;">What Our Customers Say</h2>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">Verified buyers enjoying factory direct quality from Ruby Garments Udyog Enterprises</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          <div style="background: var(--bg-card); padding: 24px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <div style="color: var(--accent-gold); margin-bottom: 10px;">★ ★ ★ ★ ★</div>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
+              "The 240 GSM oversized acid wash tee feels exactly like high-end designer brands. Knowing the non-refundable policy, I measured carefully with their size chart and it fit perfectly!"
+            </p>
+            <div style="font-weight: 700; font-size: 0.85rem; color: #fff;">— Rohan Sharma, Mumbai (Verified Buyer)</div>
+          </div>
+
+          <div style="background: var(--bg-card); padding: 24px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <div style="color: var(--accent-gold); margin-bottom: 10px;">★ ★ ★ ★ ★</div>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
+              "Ruby Garments Udyog has knocked it out of the park with their luxury pique polos. Pappu Singh's factory direct pricing is unmatched in the market."
+            </p>
+            <div style="font-weight: 700; font-size: 0.85rem; color: #fff;">— Aditya Verma, Delhi (Verified Buyer)</div>
+          </div>
+
+          <div style="background: var(--bg-card); padding: 24px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <div style="color: var(--accent-gold); margin-bottom: 10px;">★ ★ ★ ★ ★</div>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
+              "Bought the 3-Pack combo bundle. Heavyweight cotton, zero shrinkage after wash, and rapid 3-day delivery. Will definitely buy again."
+            </p>
+            <div style="font-weight: 700; font-size: 0.85rem; color: #fff;">— Vikas Patel, Ahmedabad (Verified Buyer)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand-info">
+          <div class="brand-logo-wrap">
+            <img src="assets/logo.png" alt="RB Garment Enterprises Logo" class="brand-logo-img" style="width: 58px; height: 58px;" />
+            <div class="brand-title-group">
+              <span class="brand-title">BRAND WARDROBE</span>
+              <span class="brand-subtitle">RB Garment Enterprises</span>
+            </div>
+          </div>
+          <p>
+            Direct factory retail outlet for premium streetwear, bio-washed pique polos, linen shirts, and rugged selvedge denim.
+          </p>
+
+          <!-- Owner Profile Details -->
+          <div class="footer-owner-tag">
+            <span class="owner-title">Business Proprietor & Office</span>
+            <span class="owner-name">Pappu Singh</span>
+            <span class="owner-company">Ruby Garments Udyog Enterprises</span>
+            <span style="font-size: 0.72rem; color: var(--accent-gold); margin-top: 4px;">📍 Townhall, Gorakhpur - 273001, UP</span>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Shop Collections</h4>
+          <ul class="footer-links">
+            <li><a href="#catalog" onclick="document.querySelector('[data-category=oversized-tees]').click()">Oversized T-Shirts</a></li>
+            <li><a href="#catalog" onclick="document.querySelector('[data-category=polos]').click()">Classic Pique Polos</a></li>
+            <li><a href="#catalog" onclick="document.querySelector('[data-category=shirts]').click()">Resort Cuban Shirts</a></li>
+            <li><a href="#catalog" onclick="document.querySelector('[data-category=denims]').click()">Selvedge Denim Jeans</a></li>
+            <li><a href="#catalog" onclick="document.querySelector('[data-category=winterwear]').click()">Heavy Fleece Hoodies</a></li>
+            <li><a href="#catalog" onclick="document.querySelector('[data-category=combos]').click()">Combo Super Saver Bundles</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal & Policies -->
+        <div class="footer-col">
+          <h4>Store Policies</h4>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="openPolicyModal('refund-policy')" style="color: #fca5a5; font-weight: 700;">🚫 Non-Refundable Policy</a></li>
+            <li><a href="javascript:void(0)" onclick="openPolicyModal('about-us')">About Ruby Garments Udyog</a></li>
+            <li><a href="javascript:void(0)" onclick="openPolicyModal('size-guide')">Official Size Chart & Limits</a></li>
+            <li><a href="javascript:void(0)" onclick="openPolicyModal('contact-us')">Contact Us & Support</a></li>
+            <li><a href="javascript:void(0)" onclick="showToast('Paytm Gateway MID: UHYEFn90798504990109 Active', 'info')">Paytm Payment Gateway</a></li>
+          </ul>
+        </div>
+
+        <!-- Strict Non-Refundable Notice in Footer -->
+        <div class="footer-col">
+          <div class="footer-strict-notice">
+            <h5>⚠️ Strict Non-Refundable Terms</h5>
+            <p>
+              Merchandise sold by <strong>Ruby Garments Udyog Enterprises</strong> (Townhall, Gorakhpur - 273001) is dispatched under direct factory supervision. To sustain deep wholesale pricing, all sales are final and strictly non-returnable and non-refundable. Cart limit: Max 10 items / order.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Credits -->
+      <div class="footer-bottom">
+        <div>
+          © 2026 <strong>Brand Wardrobe</strong> (brandwardrobe.in) • Operated by <strong>Ruby Garments Udyog Enterprises</strong> (Proprietor: <strong>Pappu Singh</strong>, Office: <strong>Townhall, Gorakhpur - 273001</strong>). All Rights Reserved.
+        </div>
+        <div style="display: flex; gap: 16px;">
+          <span>💳 Verified Paytm Gateway</span>
+          <span>⚡ Direct Factory Dispatch</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       DRAWERS & MODALS
+       ========================================================================= -->
+
+  <!-- Drawer Backdrop -->
+  <div class="drawer-backdrop" id="drawer-backdrop" onclick="closeCartDrawer()"></div>
+
+  <!-- Cart Slide-over Drawer -->
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart Drawer">
+    <div class="cart-header">
+      <h3>🛒 Shopping Cart</h3>
+      <button class="btn-close-drawer" onclick="closeCartDrawer()" title="Close Cart">✕</button>
+    </div>
+
+    <!-- Free Shipping Progress Tracker -->
+    <div class="shipping-progress-box">
+      <div class="shipping-progress-text" id="shipping-progress-text">
+        Add <strong>₹300</strong> more for <strong>FREE Express Shipping</strong>
+      </div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="shipping-progress-fill" style="width: 70%;"></div>
+      </div>
+    </div>
+
+    <!-- Items container -->
+    <div class="cart-items-container" id="cart-items-container">
+      <!-- Rendered dynamically by JS -->
+    </div>
+
+    <!-- Cart Footer & Checkout -->
+    <div class="cart-footer" id="cart-footer">
+      <!-- Promo code field -->
+      <div class="promo-apply-wrap">
+        <input type="text" class="promo-input" id="promo-input-field" placeholder="PROMO CODE (e.g. RUBY10)" />
+        <button class="btn-apply-promo" onclick="handleApplyPromo()">Apply</button>
+      </div>
+
+      <div class="applied-promo-tag" id="applied-promo-tag" style="display: none;"></div>
+
+      <!-- Summary lines -->
+      <div class="cart-summary-line">
+        <span>Items Subtotal:</span>
+        <span id="cart-subtotal-val">₹0</span>
+      </div>
+      <div class="cart-summary-line" id="cart-discount-line" style="display: none; color: var(--accent-emerald);">
+        <span>Discount:</span>
+        <span id="cart-discount-val">-₹0</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>Estimated Delivery:</span>
+        <span id="cart-shipping-val">FREE</span>
+      </div>
+      <div class="cart-summary-line total">
+        <span>Final Total:</span>
+        <span id="cart-total-val" style="color: var(--accent-gold);">₹0</span>
+      </div>
+
+      <!-- Strict Non-Refundable Checkbox Agreement -->
+      <label class="policy-ack-notice">
+        <input type="checkbox" id="cart-policy-checkbox" checked />
+        <span>I understand and agree to the <strong>Strict Non-Refundable & No Return Policy</strong> of Ruby Garments Udyog Enterprises.</span>
+      </label>
+
+      <button class="btn-checkout-proceed" onclick="openCheckoutModal()">
+        🔒 Proceed To Checkout
+      </button>
+    </div>
+  </aside>
+
+  <!-- Quick View Modal -->
+  <div class="modal-backdrop" id="quickview-modal">
+    <div class="modal-content">
+      <button class="modal-close-btn" onclick="closeModal('quickview-modal')">✕</button>
+      <div id="quickview-body">
+        <!-- Rendered dynamically by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="modal-backdrop" id="checkout-modal">
+    <div class="modal-content checkout-modal-content">
+      <button class="modal-close-btn" onclick="closeModal('checkout-modal')">✕</button>
+      
+      <h2 class="checkout-title">⚡ Express Secure Checkout</h2>
+      <p class="checkout-sub">Fulfillment by <strong>Ruby Garments Udyog Enterprises</strong> (Owner: Pappu Singh, Office: Townhall, Gorakhpur - 273001)</p>
+
+      <!-- Order Summary Card -->
+      <div id="checkout-order-summary"></div>
+
+      <form id="checkout-form" onsubmit="handlePlaceOrder(event)">
+        <h4 style="font-size: 1rem; color: #fff; margin-bottom: 14px;">1. Shipping & Delivery Address</h4>
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Full Name *</label>
+            <input type="text" class="form-input" id="cust-name" required placeholder="e.g. Rahul Sharma" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Mobile Number *</label>
+            <input type="tel" class="form-input" id="cust-phone" required pattern="[0-9]{10}" placeholder="10-digit mobile number" />
+          </div>
+          <div class="form-group full">
+            <label class="form-label">Complete Street Address *</label>
+            <input type="text" class="form-input" id="cust-address" required placeholder="Flat / House / Street / Landmark" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">City *</label>
+            <input type="text" class="form-input" id="cust-city" required placeholder="e.g. Gorakhpur / Lucknow" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">State *</label>
+            <input type="text" class="form-input" id="cust-state" required placeholder="e.g. Uttar Pradesh" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">PIN Code *</label>
+            <input type="text" class="form-input" id="cust-pincode" required pattern="[0-9]{6}" placeholder="6-digit PIN code" />
+          </div>
+        </div>
+
+        <h4 style="font-size: 1rem; color: #fff; margin-bottom: 14px;">2. Select Payment Gateway</h4>
+        <div class="payment-methods-grid">
+          <label class="payment-card-opt active" style="border-color: #00b9f5; background: rgba(0, 185, 245, 0.1);">
+            <input type="radio" name="payment_opt" value="Paytm Payment Gateway" checked style="display: none;" />
+            <div class="payment-icon" style="color: #00b9f5; font-weight: 900; font-size: 1.1rem; font-family: sans-serif;">Paytm</div>
+            <div class="payment-name" style="color: #00b9f5;">Paytm Gateway (UPI/QR/Wallet/Cards)</div>
+          </label>
+          <label class="payment-card-opt">
+            <input type="radio" name="payment_opt" value="Cash On Delivery (COD)" style="display: none;" />
+            <div class="payment-icon">💵</div>
+            <div class="payment-name">Cash On Delivery (COD)</div>
+          </label>
+          <label class="payment-card-opt">
+            <input type="radio" name="payment_opt" value="Direct UPI / Netbanking" style="display: none;" />
+            <div class="payment-icon">📱</div>
+            <div class="payment-name">Other UPI / Netbanking</div>
+          </label>
+        </div>
+
+        <!-- Strict Non-Refundable Disclaimer -->
+        <div class="policy-strict-box" style="margin-bottom: 20px;">
+          <div class="policy-strict-header">
+            <span>🛡️</span> NON-REFUNDABLE POLICY AGREEMENT
+          </div>
+          <p class="policy-strict-text">
+            By placing this order, you confirm that you are purchasing directly from Ruby Garments Udyog Enterprises (Townhall, Gorakhpur - 273001) and agree that all items are strictly non-refundable and non-returnable once shipped.
+          </p>
+        </div>
+
+        <button type="submit" class="btn-checkout-proceed" style="width: 100%; background: linear-gradient(135deg, #00b9f5, #002970); color: #fff; box-shadow: 0 4px 15px rgba(0, 185, 245, 0.4);">
+          🔒 Continue to Paytm Payment Gateway
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Paytm Payment Gateway Modal -->
+  <div class="modal-backdrop" id="paytm-gateway-modal">
+    <div class="modal-content" style="max-width: 620px; padding: 28px;">
+      <button class="modal-close-btn" onclick="closeModal('paytm-gateway-modal')">✕</button>
+      <div id="paytm-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Order Receipt Confirmation Modal -->
+  <div class="modal-backdrop" id="receipt-modal">
+    <div class="modal-content" style="max-width: 600px; padding: 32px;">
+      <button class="modal-close-btn" onclick="closeModal('receipt-modal')">✕</button>
+      <div id="receipt-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Policy / Legal Documents Modal -->
+  <div class="modal-backdrop" id="policy-modal">
+    <div class="modal-content" style="max-width: 760px;">
+      <button class="modal-close-btn" onclick="closeModal('policy-modal')">✕</button>
+      <div id="policy-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Live Instant Search Modal -->
+  <div class="modal-backdrop" id="search-modal">
+    <div class="modal-content search-modal-content">
+      <button class="modal-close-btn" onclick="closeModal('search-modal')">✕</button>
+      <h3 style="margin-bottom: 16px;">🔍 Search Brand Wardrobe</h3>
+      <div class="search-input-wrap">
+        <span class="search-field-icon">🔎</span>
+        <input type="text" class="search-field" id="search-query-input" placeholder="Search oversized tees, polos, shirts, denims..." autocomplete="off" />
+      </div>
+      <div class="search-results-list" id="search-results-box">
+        <p style="color: var(--text-muted); font-size: 0.85rem; text-align: center; padding: 20px;">
+          Type to search our collection...
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Scripts -->
+  <script src="js/env.js"></script>
+  <script src="js/products-data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
