@@ -17,7 +17,7 @@ class StoreState {
 
     // Paytm Gateway Configuration from ENV
     this.paytmConfig = {
-      mid: env.PAYTM_MID || "UHYEFn90798504990109",
+      mid: env.PAYTM_MID || "TEST_MODE",
       merchantKey: env.PAYTM_MERCHANT_KEY || "zFOtTSahK6#Hq_V9",
       website: env.PAYTM_WEBSITE || "WEBSTAGING",
       industryType: env.PAYTM_INDUSTRY_TYPE_ID || "Retail",

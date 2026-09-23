@@ -648,7 +648,7 @@ function switchPaytmTab(tab, btn) {
 function finishPaytmTransaction(orderData) {
   closeModal("paytm-gateway-modal");
   store.clearCart();
-  orderData.paymentMethod = "Paytm Gateway (TXN_SUCCESS - MID: " + store.paytmConfig.mid.substring(0, 8) + "...)";
+  orderData.paymentMethod = "Paytm Gateway (TXN_SUCCESS)";
   openReceiptModal(orderData);
   showToast(`Paytm API Payment Approved! Order #${orderData.orderId} Placed.`, "success");
 }

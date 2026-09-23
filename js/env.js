@@ -2,8 +2,8 @@
 // Reads from .env / runtime configurations
 
 window.ENV = {
-  // Paytm Payment Gateway Configuration
-  PAYTM_MID: "UHYEFn90798504990109",
+  // Paytm Payment Gateway Configuration (Test Mode)
+  PAYTM_MID: "TEST_MODE",
   PAYTM_MERCHANT_KEY: "zFOtTSahK6#Hq_V9",
   PAYTM_WEBSITE: "WEBSTAGING",
   PAYTM_INDUSTRY_TYPE_ID: "Retail",
