@@ -73,7 +73,7 @@ function renderProducts(category = "all") {
           
           <div class="product-rating">
             <div class="star-icons">★ ★ ★ ★ ★</div>
-            <span class="rating-count">(${product.reviewsCount})</span>
+            <span class="rating-count">(${product.reviewsCount} verified reviews)</span>
           </div>
 
           <div class="product-pricing">
@@ -82,15 +82,37 @@ function renderProducts(category = "all") {
             <span class="price-discount">${product.discount}</span>
           </div>
 
+          <p class="product-card-desc">${product.description}</p>
+
+          <div class="product-spec-chips">
+            <span class="product-spec-pill">🧵 ${product.fabric}</span>
+            <span class="product-spec-pill">📏 Sizes: ${product.sizes.join(', ')}</span>
+          </div>
+
+          <div class="product-mfg-tag">🏭 Direct Mfr: Ruby Garments Udyog Enterprises, Gorakhpur</div>
+
           <div class="card-bottom-actions">
-            <button class="btn-quick-add" onclick="handleQuickAdd('${product.id}')">
-              ⚡ Quick Add (${product.sizes[0]})
+            <button class="btn-quick-add" onclick="handleQuickAdd('${product.id}')" title="Add to Cart">
+              🛒 Add to Cart
             </button>
+            <a href="checkout/index.html?buyNow=${product.id}" onclick="handleDirectBuyNow(event, '${product.id}')" class="btn-card-buy-now" title="Proceed to Checkout">
+              ⚡ Buy Now
+            </a>
           </div>
         </div>
       </div>
     `;
   }).join("");
+}
+
+// Direct Buy Now Handler
+function handleDirectBuyNow(event, productId) {
+  if (event) event.preventDefault();
+  const product = PRODUCTS_DATA.find(p => p.id === productId);
+  if (product) {
+    store.addToCart(product, product.sizes[0] || "L", product.colors[0]?.name || "Standard", 1);
+  }
+  window.location.href = "checkout/index.html";
 }
 
 // Quick Add Handler
@@ -533,7 +555,6 @@ function openPaytmGatewayModal(orderData) {
       <!-- Merchant Details Banner -->
       <div style="background: rgba(0, 185, 245, 0.08); border: 1px dashed rgba(0, 185, 245, 0.3); border-radius: 8px; padding: 10px 14px; margin: 16px 0; font-size: 0.75rem; color: #bae6fd;">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
-          <div><strong>Merchant ID (MID):</strong> <code style="color:#38bdf8;">${store.paytmConfig.mid}</code></div>
           <div><strong>Environment:</strong> <code style="color:#38bdf8;">${store.paytmConfig.website}</code></div>
           <div><strong>Industry Type:</strong> ${store.paytmConfig.industryType}</div>
           <div><strong>Channel:</strong> ${store.paytmConfig.channelIdWeb} / ${store.paytmConfig.channelIdWap}</div>
@@ -740,7 +761,7 @@ function openPolicyModal(tabName = "refund-policy") {
             In the improbable event of receiving an incorrect parcel or transit damage, customers must submit an uninterrupted unboxing video within 24 hours of delivery to our support team for verification.
           </p>
           <p style="margin-top: 8px;">
-            <strong>Official Support:</strong> support@neoclare.com | WhatsApp: +91 98765 43210<br/>
+            <strong>Official Support:</strong> support@neoclare.com | WhatsApp: +91 70549 16134<br/>
             <strong>Office:</strong> Townhall, Gorakhpur - 273001, Uttar Pradesh, India
           </p>
         </div>
@@ -790,10 +811,10 @@ function openPolicyModal(tabName = "refund-policy") {
           <h3>📞 Contact Channels</h3>
           <p><strong>Business Name:</strong> Ruby Garments Udyog Enterprises</p>
           <p><strong>Proprietor:</strong> Pappu Singh</p>
+          <p><strong>Website:</strong> https://eventhub.neoclare.com/</p>
           <p><strong>Office Location:</strong> Townhall, Gorakhpur - 273001, Uttar Pradesh, India</p>
-          <p><strong>Support Email:</strong> support@neoclare.com</p>
-          <p><strong>WhatsApp Support:</strong> +91 98765 43210 (Mon-Sat, 10 AM - 7 PM IST)</p>
-          <p><strong>Payment Gateway:</strong> Paytm (MID: ${store.paytmConfig.mid})</p>
+          <p><strong>Support Email:</strong> support.neoclare.com</p>
+          <p><strong>WhatsApp Support:</strong> +91 70549 16134 (Mon-Sat, 10 AM - 7 PM IST)</p> 
         </div>
       </div>
     `;

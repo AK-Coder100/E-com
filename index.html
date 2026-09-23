@@ -63,7 +63,8 @@
       <!-- Desktop Navigation Menu -->
       <nav aria-label="Main Navigation">
         <ul class="nav-menu" id="main-nav-menu">
-          <li><a href="checkout/index.html" class="btn-primary" style="padding: 7px 18px; font-size: 0.85rem; text-decoration: none;">Checkout 🔒</a></li>
+          <li><a href="checkout/index.html" class="btn-primary"
+              style="padding: 7px 18px; font-size: 0.85rem; text-decoration: none;">Checkout 🔒</a></li>
         </ul>
       </nav>
 
@@ -226,9 +227,231 @@
         <button class="filter-pill" data-category="winterwear">Hoodies & Winterwear</button>
       </div>
 
-      <!-- Dynamic Products Grid -->
+      <!-- Products Grid (Pre-rendered for static SEO, Bots & Scrapers, and fully interactive via JS) -->
       <div class="products-grid" id="products-grid">
-        <!-- Rendered by JS -->
+        <!-- Product 1 -->
+        <div class="product-card" data-id="rw-101">
+          <div class="product-image-wrap">
+            <img src="https://dukaan.b-cdn.net/700x700/webp/media/aed317d4-4e67-446c-9ef3-7d7208d66566.png"
+              alt="Oversized Vintage Acid Wash Graphic Tee" class="product-img" loading="lazy" />
+            <div class="card-badge-group">
+              <span class="badge-bestseller">BESTSELLER</span>
+              <span class="badge-sale">53% OFF</span>
+              <span class="badge-nonref">NON-REFUNDABLE</span>
+            </div>
+            <button class="card-wishlist-btn" onclick="handleToggleWishlist('rw-101', this)"
+              title="Add to Wishlist">🤍</button>
+            <div class="card-overlay-actions">
+              <button class="btn-card-quick-view" onclick="openQuickView('rw-101')">🔍 Quick View</button>
+            </div>
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">Oversized Tees</span>
+            <h3 class="product-title" title="Oversized Vintage Acid Wash Graphic Tee">Oversized Vintage Acid Wash
+              Graphic Tee</h3>
+            <div class="product-rating">
+              <div class="star-icons">★ ★ ★ ★ ★</div>
+              <span class="rating-count">(142 verified reviews)</span>
+            </div>
+            <div class="product-pricing">
+              <span class="price-current">₹699</span>
+              <span class="price-original">₹1499</span>
+              <span class="price-discount">53% OFF</span>
+            </div>
+            <p class="product-card-desc">Crafted from heavy 240 GSM pure combed cotton with a relaxed drop-shoulder
+              silhouette and aesthetic retro typography print. Manufactured by Ruby Garments Udyog Enterprises.</p>
+            <div class="product-spec-chips">
+              <span class="product-spec-pill">🧵 100% Combed Cotton (240 GSM)</span>
+              <span class="product-spec-pill">📏 Sizes: S, M, L, XL, XXL</span>
+            </div>
+            <div class="product-mfg-tag">🏭 Direct Mfr: Ruby Garments Udyog Enterprises, Gorakhpur</div>
+            <div class="card-bottom-actions">
+              <button class="btn-quick-add" onclick="handleQuickAdd('rw-101')" title="Add to Cart">🛒 Add to
+                Cart</button>
+              <a href="checkout/index.html?buyNow=rw-101" onclick="handleDirectBuyNow(event, 'rw-101')"
+                class="btn-card-buy-now" title="Proceed to Checkout">⚡ Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card" data-id="rw-102">
+          <div class="product-image-wrap">
+            <img
+              src="https://imagescdn.thecollective.in/img/app/product/1/1158675-21874887.jpg?asp=true&crop=700&auto=format"
+              alt="Classic Luxury Pique Polo Shirt" class="product-img" loading="lazy" />
+            <div class="card-badge-group">
+              <span class="badge-bestseller">BESTSELLER</span>
+              <span class="badge-sale">56% OFF</span>
+              <span class="badge-nonref">NON-REFUNDABLE</span>
+            </div>
+            <button class="card-wishlist-btn" onclick="handleToggleWishlist('rw-102', this)"
+              title="Add to Wishlist">🤍</button>
+            <div class="card-overlay-actions">
+              <button class="btn-card-quick-view" onclick="openQuickView('rw-102')">🔍 Quick View</button>
+            </div>
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">Polo T-Shirts</span>
+            <h3 class="product-title" title="Classic Luxury Pique Polo Shirt">Classic Luxury Pique Polo Shirt</h3>
+            <div class="product-rating">
+              <div class="star-icons">★ ★ ★ ★ ★</div>
+              <span class="rating-count">(98 verified reviews)</span>
+            </div>
+            <div class="product-pricing">
+              <span class="price-current">₹799</span>
+              <span class="price-original">₹1799</span>
+              <span class="price-discount">56% OFF</span>
+            </div>
+            <p class="product-card-desc">Refined honeycomb knit polo shirt featuring tipping collar detail,
+              mother-of-pearl buttons, and ribbed cuffs. Impeccable drape for smart casual everyday wear.</p>
+            <div class="product-spec-chips">
+              <span class="product-spec-pill">🧵 100% Bio-Washed Pique Cotton (220 GSM)</span>
+              <span class="product-spec-pill">📏 Sizes: M, L, XL, XXL</span>
+            </div>
+            <div class="product-mfg-tag">🏭 Direct Mfr: Ruby Garments Udyog Enterprises, Gorakhpur</div>
+            <div class="card-bottom-actions">
+              <button class="btn-quick-add" onclick="handleQuickAdd('rw-102')" title="Add to Cart">🛒 Add to
+                Cart</button>
+              <a href="checkout/index.html?buyNow=rw-102" onclick="handleDirectBuyNow(event, 'rw-102')"
+                class="btn-card-buy-now" title="Proceed to Checkout">⚡ Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card" data-id="rw-103">
+          <div class="product-image-wrap">
+            <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80"
+              alt="Downtown Striped Relaxed Cuban Collar Shirt" class="product-img" loading="lazy" />
+            <div class="card-badge-group">
+              <span class="badge-sale">55% OFF</span>
+              <span class="badge-nonref">NON-REFUNDABLE</span>
+            </div>
+            <button class="card-wishlist-btn" onclick="handleToggleWishlist('rw-103', this)"
+              title="Add to Wishlist">🤍</button>
+            <div class="card-overlay-actions">
+              <button class="btn-card-quick-view" onclick="openQuickView('rw-103')">🔍 Quick View</button>
+            </div>
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">Casual Shirts</span>
+            <h3 class="product-title" title="Downtown Striped Relaxed Cuban Collar Shirt">Downtown Striped Relaxed Cuban
+              Collar Shirt</h3>
+            <div class="product-rating">
+              <div class="star-icons">★ ★ ★ ★ ★</div>
+              <span class="rating-count">(64 verified reviews)</span>
+            </div>
+            <div class="product-pricing">
+              <span class="price-current">₹899</span>
+              <span class="price-original">₹1999</span>
+              <span class="price-discount">55% OFF</span>
+            </div>
+            <p class="product-card-desc">Breathable resort-ready Cuban camp collar shirt in textured vertical stripes.
+              Features clean wooden buttons and a relaxed boxy cut tailored for warm climate comfort.</p>
+            <div class="product-spec-chips">
+              <span class="product-spec-pill">🧵 Linen-Cotton Blend (Pre-Shrunk)</span>
+              <span class="product-spec-pill">📏 Sizes: S, M, L, XL</span>
+            </div>
+            <div class="product-mfg-tag">🏭 Direct Mfr: Ruby Garments Udyog Enterprises, Gorakhpur</div>
+            <div class="card-bottom-actions">
+              <button class="btn-quick-add" onclick="handleQuickAdd('rw-103')" title="Add to Cart">🛒 Add to
+                Cart</button>
+              <a href="checkout/index.html?buyNow=rw-103" onclick="handleDirectBuyNow(event, 'rw-103')"
+                class="btn-card-buy-now" title="Proceed to Checkout">⚡ Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card" data-id="rw-104">
+          <div class="product-image-wrap">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKfp_9Tet37hJ83k65QYsd-njXQjx6CjwbQ5J_7DeuoA&s=10"
+              alt="Urban Tactical Hoodie FullZip Black" class="product-img" loading="lazy" />
+            <div class="card-badge-group">
+              <span class="badge-bestseller">BESTSELLER</span>
+              <span class="badge-sale">52% OFF</span>
+              <span class="badge-nonref">NON-REFUNDABLE</span>
+            </div>
+            <button class="card-wishlist-btn" onclick="handleToggleWishlist('rw-104', this)"
+              title="Add to Wishlist">🤍</button>
+            <div class="card-overlay-actions">
+              <button class="btn-card-quick-view" onclick="openQuickView('rw-104')">🔍 Quick View</button>
+            </div>
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">Winter Wear</span>
+            <h3 class="product-title" title="Urban Tactical Hoodie FullZip Black">Urban Tactical Hoodie FullZip Black
+            </h3>
+            <div class="product-rating">
+              <div class="star-icons">★ ★ ★ ★ ★</div>
+              <span class="rating-count">(210 verified reviews)</span>
+            </div>
+            <div class="product-pricing">
+              <span class="price-current">₹1199</span>
+              <span class="price-original">₹2499</span>
+              <span class="price-discount">52% OFF</span>
+            </div>
+            <p class="product-card-desc">Ultra-plush 380 GSM brushed fleece hooded sweatshirt with double-layered hood,
+              kangaroo pocket, ribbed hems, and minimalist brand tag.</p>
+            <div class="product-spec-chips">
+              <span class="product-spec-pill">🧵 80% Cotton / 20% Poly Fleece (380 GSM)</span>
+              <span class="product-spec-pill">📏 Sizes: M, L, XL, XXL</span>
+            </div>
+            <div class="product-mfg-tag">🏭 Direct Mfr: Ruby Garments Udyog Enterprises, Gorakhpur</div>
+            <div class="card-bottom-actions">
+              <button class="btn-quick-add" onclick="handleQuickAdd('rw-104')" title="Add to Cart">🛒 Add to
+                Cart</button>
+              <a href="checkout/index.html?buyNow=rw-104" onclick="handleDirectBuyNow(event, 'rw-104')"
+                class="btn-card-buy-now" title="Proceed to Checkout">⚡ Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card" data-id="rw-105">
+          <div class="product-image-wrap">
+            <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=800&q=80"
+              alt="Relaxed Fit 6-Pocket Tactical Cargo Pants" class="product-img" loading="lazy" />
+            <div class="card-badge-group">
+              <span class="badge-sale">55% OFF</span>
+              <span class="badge-nonref">NON-REFUNDABLE</span>
+            </div>
+            <button class="card-wishlist-btn" onclick="handleToggleWishlist('rw-105', this)"
+              title="Add to Wishlist">🤍</button>
+            <div class="card-overlay-actions">
+              <button class="btn-card-quick-view" onclick="openQuickView('rw-105')">🔍 Quick View</button>
+            </div>
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">Bottoms & Pants</span>
+            <h3 class="product-title" title="Relaxed Fit 6-Pocket Tactical Cargo Pants">Relaxed Fit 6-Pocket Tactical
+              Cargo Pants</h3>
+            <div class="product-rating">
+              <div class="star-icons">★ ★ ★ ★ ★</div>
+              <span class="rating-count">(130 verified reviews)</span>
+            </div>
+            <div class="product-pricing">
+              <span class="price-current">₹999</span>
+              <span class="price-original">₹2199</span>
+              <span class="price-discount">55% OFF</span>
+            </div>
+            <p class="product-card-desc">Heavy-duty twill cargo pants built with reinforced knee panels, spacious
+              bellows pockets with snap closures, and elasticated ankle adjusters.</p>
+            <div class="product-spec-chips">
+              <span class="product-spec-pill">🧵 100% Cotton Canvas Twill (290 GSM)</span>
+              <span class="product-spec-pill">📏 Sizes: 30, 32, 34, 36, 38</span>
+            </div>
+            <div class="product-mfg-tag">🏭 Direct Mfr: Ruby Garments Udyog Enterprises, Gorakhpur</div>
+            <div class="card-bottom-actions">
+              <button class="btn-quick-add" onclick="handleQuickAdd('rw-105')" title="Add to Cart">🛒 Add to
+                Cart</button>
+              <a href="checkout/index.html?buyNow=rw-105" onclick="handleDirectBuyNow(event, 'rw-105')"
+                class="btn-card-buy-now" title="Proceed to Checkout">⚡ Buy Now</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

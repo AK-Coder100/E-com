@@ -32,8 +32,8 @@ class StoreState {
       brandName: env.BRAND_NAME || "RB Garment Enterprises",
       owner: env.OWNER_NAME || "Pappu Singh",
       address: env.OFFICE_LOCATION || "Townhall, Gorakhpur - 273001, Uttar Pradesh, India",
-      email: env.SUPPORT_EMAIL || "support@neoclare.com",
-      phone: env.SUPPORT_PHONE || "+91 98765 43210"
+      email: env.SUPPORT_EMAIL || "support.neoclare.com",
+      phone: env.SUPPORT_PHONE || "+91 70549 16134"
     };
 
     this.subscribers = [];

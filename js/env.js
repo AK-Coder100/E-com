@@ -17,8 +17,9 @@ window.ENV = {
   BRAND_NAME: "RB Garment Enterprises",
   OWNER_NAME: "Pappu Singh",
   OFFICE_LOCATION: "Townhall, Gorakhpur - 273001, Uttar Pradesh, India",
-  SUPPORT_EMAIL: "support@neoclare.com",
-  SUPPORT_PHONE: "+91 98765 43210",
+  WEBSITE_URL: "https://eventhub.neoclare.com",
+  SUPPORT_EMAIL: "support.neoclare.com",
+  SUPPORT_PHONE: "+91 70549 16134",
 
   // Policy Settings
   RETURN_REFUND_POLICY: "STRICT_NON_REFUNDABLE",
