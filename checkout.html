@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Secure Checkout | Ruby Wardrobe - Ruby Garments Udyog Enterprises</title>
+  <meta name="description"
+    content="Secure Checkout Page for Ruby Wardrobe. Official merchant: Ruby Garments Udyog Enterprises, Townhall, Gorakhpur - 273001. Verified Paytm Payment Gateway." />
+  <meta name="theme-color" content="#0a0c10" />
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    .checkout-page-container {
+      padding: 40px 0 80px;
+    }
+
+    .checkout-page-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.95fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .checkout-panel {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .checkout-section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      background: var(--accent-gold);
+      color: #000;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .order-summary-item {
+      display: flex;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .order-summary-item img {
+      width: 64px;
+      height: 74px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      background: #1e2430;
+    }
+
+    .order-summary-item-info {
+      flex: 1;
+    }
+
+    .order-summary-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .order-summary-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .order-summary-price {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .checkout-page-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Announcement Bar -->
+  <aside class="announcement-bar" aria-label="Store Announcement">
+    <div class="container announcement-content">
+      <div class="announcement-ticker">
+        <span class="badge-pulse">SECURE CHECKOUT</span>
+        <span>🔒 256-Bit SSL Encrypted Paytm Payment Gateway | Office: Townhall, Gorakhpur - 273001</span>
+      </div>
+      <div class="announcement-links">
+        <a href="return-refund-policy.html">Return Policy 🛡️</a>
+        <a href="contact-us.html">Customer Helpdesk 💬</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo-wrap" title="Back to Store">
+        <img src="assets/logo.png" alt="RB Garment Enterprises Logo" class="brand-logo-img" />
+        <div class="brand-title-group">
+          <span class="brand-title">Ruby Wardrobe</span>
+          <span class="brand-subtitle">Ruby Garments Udyog</span>
+        </div>
+      </a>
+      <div style="display: flex; align-items: center; gap: 16px; font-size: 0.85rem; color: var(--text-secondary);">
+        <span>← <a href="index.html" style="color: var(--accent-gold); font-weight: 700;">Continue Shopping</a></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Checkout Page Body -->
+  <main class="container checkout-page-container">
+    <div style="margin-bottom: 28px;">
+      <h1 style="font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 6px;">Express Checkout</h1>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">
+        Official Direct Merchant: <strong>Ruby Garments Udyog Enterprises</strong> (Proprietor: <strong>Pappu
+          Singh</strong>, Townhall, Gorakhpur - 273001)
+      </p>
+    </div>
+
+    <div class="checkout-page-grid">
+      <!-- Left Column: Shipping & Payment Form -->
+      <div>
+        <form id="dedicated-checkout-form" onsubmit="handleDedicatedCheckoutSubmit(event)">
+          <!-- Step 1: Customer & Delivery Address -->
+          <div class="checkout-panel" style="margin-bottom: 24px;">
+            <div class="checkout-section-header">
+              <span class="step-num">1</span>
+              <span>Delivery & Shipping Address</span>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label">Full Name *</label>
+                <input type="text" class="form-input" id="checkout-name" required placeholder="e.g. Rahul Sharma" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Mobile Number *</label>
+                <input type="tel" class="form-input" id="checkout-phone" required pattern="[0-9]{10}"
+                  placeholder="10-digit mobile number" />
+              </div>
+              <div class="form-group full">
+                <label class="form-label">Email Address *</label>
+                <input type="email" class="form-input" id="checkout-email" required
+                  placeholder="e.g. customer@example.com" />
+              </div>
+              <div class="form-group full">
+                <label class="form-label">Complete Street Address *</label>
+                <input type="text" class="form-input" id="checkout-address" required
+                  placeholder="Flat / House No. / Street / Landmark" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">City *</label>
+                <input type="text" class="form-input" id="checkout-city" required
+                  placeholder="e.g. Gorakhpur / Lucknow" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">State *</label>
+                <input type="text" class="form-input" id="checkout-state" required placeholder="e.g. Uttar Pradesh" />
+              </div>
+              <div class="form-group full">
+                <label class="form-label">PIN Code (6-Digits) *</label>
+                <input type="text" class="form-input" id="checkout-pincode" required pattern="[0-9]{6}"
+                  placeholder="6-digit PIN code" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Payment Gateway Selection -->
+          <div class="checkout-panel" style="margin-bottom: 24px;">
+            <div class="checkout-section-header">
+              <span class="step-num">2</span>
+              <span>Payment Gateway Method</span>
+            </div>
+
+            <div class="payment-methods-grid">
+              <label class="payment-card-opt active" style="border-color: #00b9f5; background: rgba(0, 185, 245, 0.1);">
+                <input type="radio" name="payment_opt" value="Paytm Payment Gateway" checked style="display: none;" />
+                <div class="payment-icon"
+                  style="color: #00b9f5; font-weight: 900; font-size: 1.1rem; font-family: sans-serif;">Paytm</div>
+                <div class="payment-name" style="color: #00b9f5;">Paytm API Gateway (UPI / QR / Cards / Netbanking)
+                </div>
+              </label>
+              <label class="payment-card-opt">
+                <input type="radio" name="payment_opt" value="Cash On Delivery (COD)" style="display: none;" />
+                <div class="payment-icon">💵</div>
+                <div class="payment-name">Cash On Delivery (COD)</div>
+              </label>
+              <label class="payment-card-opt">
+                <input type="radio" name="payment_opt" value="Direct UPI" style="display: none;" />
+                <div class="payment-icon">📱</div>
+                <div class="payment-name">Instant UPI (GPay / PhonePe)</div>
+              </label>
+            </div>
+
+            <!-- Merchant Credentials Badge -->
+            <div
+              style="background: rgba(0, 185, 245, 0.08); border: 1px dashed rgba(0, 185, 245, 0.3); border-radius: 8px; padding: 12px; margin-top: 14px; font-size: 0.78rem; color: #bae6fd;">
+              <div><strong>Gateway Merchant ID:</strong> <code style="color: #38bdf8;">UHYEFn90798504990109</code>
+                (WEBSTAGING)</div>
+              <div><strong>Fulfillment Partner:</strong> Ruby Garments Udyog Enterprises, Townhall, Gorakhpur - 273001
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Policy Agreement & Submission -->
+          <div class="checkout-panel">
+            <div class="policy-strict-box" style="margin-bottom: 20px;">
+              <div class="policy-strict-header">
+                <span>🛡️</span> NON-REFUNDABLE POLICY ACKNOWLEDGMENT
+              </div>
+              <p class="policy-strict-text">
+                By clicking "Pay & Complete Order", you confirm that you have read and agreed to our <a
+                  href="return-refund-policy.html" target="_blank"
+                  style="text-decoration: underline; font-weight: 700;">Strict Non-Refundable & No Return Policy</a>, <a
+                  href="terms-and-conditions.html" target="_blank" style="text-decoration: underline;">Terms &
+                  Conditions</a>, and <a href="privacy-policy.html" target="_blank"
+                  style="text-decoration: underline;">Privacy Policy</a>.
+              </p>
+            </div>
+
+            <label class="policy-ack-notice" style="margin-bottom: 20px;">
+              <input type="checkbox" id="policy-confirm-checkbox" required checked />
+              <span>I acknowledge that all sales are final under Ruby Garments Udyog Enterprises Non-Refundable
+                terms.</span>
+            </label>
+
+            <button type="submit" class="btn-checkout-proceed"
+              style="width: 100%; background: linear-gradient(135deg, #00b9f5, #002970); color: #fff; font-size: 1.05rem;">
+              🔒 Proceed to Paytm Payment Gateway
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Right Column: Order Summary & Review -->
+      <div>
+        <div class="checkout-panel" style="position: sticky; top: 90px;">
+          <h3
+            style="font-size: 1.2rem; font-weight: 800; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle);">
+            Order Summary (<span id="checkout-total-items-count">0</span> Items)
+          </h3>
+
+          <div id="checkout-items-list" style="max-height: 280px; overflow-y: auto; margin-bottom: 20px;">
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- Promo Code Box -->
+          <div class="promo-apply-wrap" style="margin-bottom: 16px;">
+            <input type="text" class="promo-input" id="checkout-promo-input" placeholder="Coupon Code (RUBY10)" />
+            <button class="btn-apply-promo" onclick="applyPromoOnCheckout()">Apply</button>
+          </div>
+          <div id="checkout-promo-badge" style="display: none; margin-bottom: 14px;" class="applied-promo-tag"></div>
+
+          <!-- Price Calculations -->
+          <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.875rem;">
+            <div style="display: flex; justify-content: space-between; color: var(--text-secondary);">
+              <span>Items Subtotal:</span>
+              <span id="page-subtotal-val">₹0</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; color: var(--accent-emerald);"
+              id="page-discount-line" style="display: none;">
+              <span>Coupon Discount:</span>
+              <span id="page-discount-val">-₹0</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; color: var(--text-secondary);">
+              <span>Express Delivery:</span>
+              <span id="page-shipping-val">FREE</span>
+            </div>
+            <div
+              style="display: flex; justify-content: space-between; font-size: 1.25rem; font-weight: 800; color: #fff; border-top: 1px solid var(--border-subtle); padding-top: 12px; margin-top: 8px;">
+              <span>Total Payable:</span>
+              <span style="color: var(--accent-gold);" id="page-grand-total-val">₹0</span>
+            </div>
+          </div>
+
+          <!-- Security Badges -->
+          <div
+            style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-subtle); display: flex; flex-direction: column; gap: 8px; font-size: 0.75rem; color: var(--text-muted);">
+            <div>🔒 256-Bit SSL Encrypted Transaction</div>
+            <div>⚡ Direct Dispatch: Ruby Garments Udyog (Townhall Gorakhpur)</div>
+            <div>🛡️ Verified Paytm Merchant ID: UHYEFn90798504990109</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Paytm Payment Gateway Processing Modal -->
+  <div class="modal-backdrop" id="paytm-gateway-modal">
+    <div class="modal-content" style="max-width: 620px; padding: 28px;">
+      <button class="modal-close-btn" onclick="closeModal('paytm-gateway-modal')">✕</button>
+      <div id="paytm-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="border: none; padding: 0;">
+      <div>
+        © 2026 <strong>Ruby Wardrobe</strong> • <strong>Ruby Garments Udyog Enterprises</strong> (Owner: <strong>Pappu
+          Singh</strong>, Office: <strong>Townhall, Gorakhpur - 273001</strong>). All Rights Reserved.
+      </div>
+      <div style="display: flex; gap: 16px;">
+        <a href="return-refund-policy.html">Refund Policy</a>
+        <a href="terms-and-conditions.html">Terms</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="contact-us.html">Contact Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/env.js"></script>
+  <script src="js/products-data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/ui.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      renderCheckoutPageReview();
+
+      // Payment card selection
+      document.querySelectorAll(".payment-card-opt").forEach(card => {
+        card.addEventListener("click", () => {
+          document.querySelectorAll(".payment-card-opt").forEach(c => {
+            c.classList.remove("active");
+            c.style.borderColor = "var(--border-subtle)";
+            c.style.background = "var(--bg-card)";
+          });
+          card.classList.add("active");
+          card.style.borderColor = "#00b9f5";
+          card.style.background = "rgba(0, 185, 245, 0.1)";
+          const radio = card.querySelector('input[type="radio"]');
+          if (radio) radio.checked = true;
+        });
+      });
+    });
+
+    function renderCheckoutPageReview() {
+      const itemsList = document.getElementById("checkout-items-list");
+      const countEl = document.getElementById("checkout-total-items-count");
+      const subtotalEl = document.getElementById("page-subtotal-val");
+      const discountLine = document.getElementById("page-discount-line");
+      const discountEl = document.getElementById("page-discount-val");
+      const shippingEl = document.getElementById("page-shipping-val");
+      const totalEl = document.getElementById("page-grand-total-val");
+      const promoBadge = document.getElementById("checkout-promo-badge");
+
+      if (countEl) countEl.textContent = store.getCartCount();
+
+      if (store.cart.length === 0) {
+        // Auto-seed default item if arriving directly on checkout page
+        if (PRODUCTS_DATA.length > 0) {
+          store.addToCart(PRODUCTS_DATA[0], "L", PRODUCTS_DATA[0].colors[0]?.name, 1);
+        }
+      }
+
+      if (itemsList) {
+        itemsList.innerHTML = store.cart.map(item => `
+          <div class="order-summary-item">
+            <img src="${item.image}" alt="${item.name}" />
+            <div class="order-summary-item-info">
+              <div class="order-summary-title">${item.name}</div>
+              <div class="order-summary-meta">Size: <strong>${item.size}</strong> | Color: <strong>${item.color}</strong> | Qty: <strong>${item.quantity}</strong></div>
+            </div>
+            <div class="order-summary-price">₹${item.price * item.quantity}</div>
+          </div>
+        `).join("");
+      }
+
+      if (subtotalEl) subtotalEl.textContent = `₹${store.getSubtotal()}`;
+
+      const discount = store.getDiscount();
+      if (discount > 0 && discountLine && discountEl) {
+        discountLine.style.display = "flex";
+        discountEl.textContent = `-₹${discount}`;
+      } else if (discountLine) {
+        discountLine.style.display = "none";
+      }
+
+      if (promoBadge) {
+        if (store.appliedCoupon) {
+          promoBadge.style.display = "flex";
+          promoBadge.innerHTML = `<span>Coupon <strong>${store.appliedCoupon.code}</strong> Applied</span> <button onclick="store.removePromoCode(); renderCheckoutPageReview();" style="color:#ef4444; margin-left:8px;">✕</button>`;
+        } else {
+          promoBadge.style.display = "none";
+        }
+      }
+
+      const ship = store.getShippingFee();
+      if (shippingEl) shippingEl.textContent = ship === 0 ? "FREE" : `₹${ship}`;
+
+      if (totalEl) totalEl.textContent = `₹${store.getFinalTotal()}`;
+    }
+
+    function applyPromoOnCheckout() {
+      const inp = document.getElementById("checkout-promo-input");
+      if (!inp) return;
+      const res = store.applyPromoCode(inp.value);
+      if (res.success) {
+        showToast(res.message, "success");
+        inp.value = "";
+        renderCheckoutPageReview();
+      } else {
+        showToast(res.message, "warning");
+      }
+    }
+
+    function handleDedicatedCheckoutSubmit(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("checkout-name").value;
+      const phone = document.getElementById("checkout-phone").value;
+      const email = document.getElementById("checkout-email").value;
+      const address = document.getElementById("checkout-address").value;
+      const city = document.getElementById("checkout-city").value;
+      const state = document.getElementById("checkout-state").value;
+      const pincode = document.getElementById("checkout-pincode").value;
+      const paymentMethod = document.querySelector('input[name="payment_opt"]:checked')?.value || "Paytm Payment Gateway";
+
+      const orderId = "RG-" + Math.floor(100000 + Math.random() * 900000);
+      const orderTotal = store.getFinalTotal();
+      const orderItems = [...store.cart];
+
+      const orderData = {
+        orderId,
+        name,
+        phone,
+        email,
+        address,
+        city,
+        state,
+        pincode,
+        paymentMethod,
+        total: orderTotal,
+        items: orderItems,
+        date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })
+      };
+
+      if (paymentMethod.includes("Paytm")) {
+        openPaytmGatewayModal(orderData);
+      } else {
+        // Save order and redirect to confirmation route
+        sessionStorage.setItem("last_order", JSON.stringify(orderData));
+        store.clearCart();
+        window.location.href = `order-confirmation.html?order_id=${orderId}`;
+      }
+    }
+  </script>
+</body>
+
+</html>

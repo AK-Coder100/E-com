@@ -1,5 +1,5 @@
 /* ==========================================================================
-   BRAND WARDROBE - RESPONSIVE STYLES
+   Ruby Wardrobe - RESPONSIVE STYLES
    ========================================================================== */
 
 @media (max-width: 1024px) {
@@ -7,7 +7,7 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  
+
   .hero-visual-card {
     max-width: 600px;
     margin: 0 auto;

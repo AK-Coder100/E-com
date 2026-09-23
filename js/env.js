@@ -10,14 +10,14 @@ window.ENV = {
   PAYTM_CHANNEL_ID_WEB: "WEB",
   PAYTM_CHANNEL_ID_WAP: "WAP",
   PAYTM_PAYMENT_URL: "https://securegw-stage.paytm.in/theia/processTransaction",
-  
+
   // Store & Merchant Info
-  STORE_NAME: "Brand Wardrobe",
+  STORE_NAME: "Ruby Wardrobe",
   COMPANY_NAME: "Ruby Garments Udyog Enterprises",
   BRAND_NAME: "RB Garment Enterprises",
   OWNER_NAME: "Pappu Singh",
   OFFICE_LOCATION: "Townhall, Gorakhpur - 273001, Uttar Pradesh, India",
-  SUPPORT_EMAIL: "support@brandwardrobe.in",
+  SUPPORT_EMAIL: "support@neoclare.com",
   SUPPORT_PHONE: "+91 98765 43210",
 
   // Policy Settings

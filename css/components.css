@@ -1,5 +1,5 @@
 /* ==========================================================================
-   BRAND WARDROBE - COMPONENTS STYLESHEET
+   Ruby Wardrobe - COMPONENTS STYLESHEET
    Product Cards, Drawers, Modals, Checkout, Policies, Toasts
    ========================================================================== */
 
@@ -164,7 +164,8 @@
   transition: all var(--trans-fast);
 }
 
-.card-wishlist-btn:hover, .card-wishlist-btn.active {
+.card-wishlist-btn:hover,
+.card-wishlist-btn.active {
   background: var(--accent-crimson);
   color: #fff;
   border-color: var(--accent-crimson);
@@ -987,7 +988,8 @@
   margin-bottom: 8px;
 }
 
-.policy-section-block p, .policy-section-block ul {
+.policy-section-block p,
+.policy-section-block ul {
   font-size: 0.875rem;
   color: var(--text-secondary);
   line-height: 1.6;
@@ -1076,8 +1078,15 @@
 }
 
 @keyframes slideInRight {
-  from { transform: translateX(100%); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* Live Search Modal */

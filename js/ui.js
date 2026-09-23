@@ -1,4 +1,4 @@
-// Brand Wardrobe - Ruby Garments Udyog Enterprises UI Controller
+// Ruby Wardrobe - Ruby Garments Udyog Enterprises UI Controller
 
 // Toast notification helper
 function showToast(message, type = "success") {
@@ -7,7 +7,7 @@ function showToast(message, type = "success") {
 
   const toast = document.createElement("div");
   toast.className = `toast ${type}`;
-  
+
   let icon = "✓";
   if (type === "warning") icon = "⚠️";
   if (type === "info") icon = "ℹ️";
@@ -100,7 +100,7 @@ function handleQuickAdd(productId) {
 
   const defaultSize = product.sizes[0] || "L";
   const defaultColor = product.colors[0]?.name || "Standard";
-  
+
   const result = store.addToCart(product, defaultSize, defaultColor, 1);
   if (result.success) {
     showToast(`Added "${product.name}" (${defaultSize}) to cart!`, "success");
@@ -373,7 +373,7 @@ function renderCartUI() {
   const appliedTag = document.getElementById("applied-promo-tag");
 
   if (subtotalEl) subtotalEl.textContent = `₹${subtotal}`;
-  
+
   const discount = store.getDiscount();
   if (discount > 0 && discountLine && discountVal) {
     discountLine.style.display = "flex";
@@ -462,7 +462,7 @@ function openCheckoutModal() {
 // Complete Order Submission
 function handlePlaceOrder(event) {
   event.preventDefault();
-  
+
   const form = document.getElementById("checkout-form");
   if (!form.checkValidity()) {
     form.reportValidity();
@@ -642,7 +642,7 @@ function openReceiptModal(order) {
       <img src="assets/logo.png" alt="RB Garment Enterprises" style="width: 72px; height: 72px; border-radius: 50%; border: 3px solid #f59e0b; margin: 0 auto 12px; box-shadow: 0 0 20px rgba(245,158,11,0.4);" />
       <h2 style="font-size: 1.6rem; color: var(--accent-gold);">Order Placed Successfully!</h2>
       <p style="color: var(--text-muted); font-size: 0.875rem;">
-        Thank you for shopping with <strong>BRAND WARDROBE</strong><br/>
+        Thank you for shopping with <strong>Ruby Wardrobe</strong><br/>
         Fulfilled by <strong>Ruby Garments Udyog Enterprises / RB Garment Enterprises</strong> (Owner: Pappu Singh)<br/>
         <strong>Office:</strong> Townhall, Gorakhpur - 273001, UP
       </p>
@@ -707,7 +707,7 @@ function openPolicyModal(tabName = "refund-policy") {
         <div class="policy-section-block" style="border-color: rgba(239, 68, 68, 0.4); background: rgba(239, 68, 68, 0.05);">
           <h3 style="color: #f87171;">🚫 STRICT NON-REFUNDABLE & NO RETURN POLICY</h3>
           <p>
-            At <strong>Brand Wardrobe</strong>, managed and operated by <strong>Ruby Garments Udyog Enterprises</strong> (Proprietor: <strong>Pappu Singh</strong>, Office: <strong>Townhall, Gorakhpur - 273001, Uttar Pradesh</strong>), we deliver factory-direct, superior grade apparel at subsidized wholesale margins.
+            At <strong>Ruby Wardrobe</strong>, managed and operated by <strong>Ruby Garments Udyog Enterprises</strong> (Proprietor: <strong>Pappu Singh</strong>, Office: <strong>Townhall, Gorakhpur - 273001, Uttar Pradesh</strong>), we deliver factory-direct, superior grade apparel at subsidized wholesale margins.
           </p>
           <p style="margin-top: 10px; font-weight: 700; color: #fff;">
             Due to the direct-to-consumer discounted pricing model and strict textile hygiene standards, all sales are 100% FINAL. We strictly enforce a NO RETURN and NON-REFUNDABLE policy on all merchandise once dispatched.
@@ -740,7 +740,7 @@ function openPolicyModal(tabName = "refund-policy") {
             In the improbable event of receiving an incorrect parcel or transit damage, customers must submit an uninterrupted unboxing video within 24 hours of delivery to our support team for verification.
           </p>
           <p style="margin-top: 8px;">
-            <strong>Official Support:</strong> support@brandwardrobe.in | WhatsApp: +91 98765 43210<br/>
+            <strong>Official Support:</strong> support@neoclare.com | WhatsApp: +91 98765 43210<br/>
             <strong>Office:</strong> Townhall, Gorakhpur - 273001, Uttar Pradesh, India
           </p>
         </div>
@@ -755,7 +755,7 @@ function openPolicyModal(tabName = "refund-policy") {
         <div class="policy-section-block">
           <h3>🏢 Company Overview</h3>
           <p>
-            <strong>Brand Wardrobe</strong> is the flagship direct-to-consumer digital portal of <strong>Ruby Garments Udyog Enterprises</strong>, founded and led by entrepreneur <strong>Pappu Singh</strong>.
+            <strong>Ruby Wardrobe</strong> is the flagship direct-to-consumer digital portal of <strong>Ruby Garments Udyog Enterprises</strong>, founded and led by entrepreneur <strong>Pappu Singh</strong>.
           </p>
           <p style="margin-top: 8px;">
             Headquartered at <strong>Townhall, Gorakhpur 273001</strong>, Ruby Garments Udyog produces high-density combed cotton apparel, classic pique polo knits, and premium selvedge denims that rival top international luxury brands at accessible Indian pricing.
@@ -791,8 +791,7 @@ function openPolicyModal(tabName = "refund-policy") {
           <p><strong>Business Name:</strong> Ruby Garments Udyog Enterprises</p>
           <p><strong>Proprietor:</strong> Pappu Singh</p>
           <p><strong>Office Location:</strong> Townhall, Gorakhpur - 273001, Uttar Pradesh, India</p>
-          <p><strong>Brand Store:</strong> Brand Wardrobe (brandwardrobe.in)</p>
-          <p><strong>Support Email:</strong> support@brandwardrobe.in</p>
+          <p><strong>Support Email:</strong> support@neoclare.com</p>
           <p><strong>WhatsApp Support:</strong> +91 98765 43210 (Mon-Sat, 10 AM - 7 PM IST)</p>
           <p><strong>Payment Gateway:</strong> Paytm (MID: ${store.paytmConfig.mid})</p>
         </div>
@@ -853,7 +852,7 @@ function handleLiveSearch(query) {
     return;
   }
 
-  const matches = PRODUCTS_DATA.filter(p => 
+  const matches = PRODUCTS_DATA.filter(p =>
     p.name.toLowerCase().includes(q) ||
     p.categoryLabel.toLowerCase().includes(q) ||
     p.description.toLowerCase().includes(q)

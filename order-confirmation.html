@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Order Confirmation | Ruby Wardrobe - Ruby Garments Udyog Enterprises</title>
+  <meta name="description"
+    content="Order Confirmation & Receipt. Ruby Garments Udyog Enterprises, Townhall, Gorakhpur - 273001. Owner: Pappu Singh." />
+  <meta name="theme-color" content="#0a0c10" />
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo-wrap" title="Back to Store">
+        <img src="assets/logo.png" alt="RB Garment Enterprises Logo" class="brand-logo-img" />
+        <div class="brand-title-group">
+          <span class="brand-title">Ruby Wardrobe</span>
+          <span class="brand-subtitle">Ruby Garments Udyog</span>
+        </div>
+      </a>
+      <div>
+        <a href="index.html" class="btn-primary" style="padding: 8px 18px; font-size: 0.85rem;">← Return to Store</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Order Success Content -->
+  <main class="container" style="max-width: 760px; padding: 50px 24px 80px;">
+    <div
+      style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 40px 32px; box-shadow: var(--shadow-lg);">
+      <div style="text-align: center; margin-bottom: 30px;">
+        <img src="assets/logo.png" alt="RB Garment Enterprises Logo"
+          style="width: 80px; height: 80px; border-radius: 50%; border: 3px solid #f59e0b; margin: 0 auto 16px; box-shadow: 0 0 25px rgba(245,158,11,0.5);" />
+        <span
+          style="background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); font-weight: 800; font-size: 0.8rem; padding: 6px 14px; border-radius: var(--radius-full); border: 1px solid rgba(16,185,129,0.3); display: inline-block; margin-bottom: 12px;">
+          ✓ PAYMENT & ORDER CONFIRMED
+        </span>
+        <h1 style="font-size: 1.8rem; font-weight: 800; color: #fff; margin-bottom: 6px;">Thank You For Your Order!</h1>
+        <p style="color: var(--text-muted); font-size: 0.875rem;">
+          Your order has been recorded and scheduled for direct factory dispatch by<br />
+          <strong>Ruby Garments Udyog Enterprises</strong> (Proprietor: <strong>Pappu Singh</strong>)<br />
+          <strong>Office:</strong> Townhall, Gorakhpur - 273001, Uttar Pradesh
+        </p>
+      </div>
+
+      <!-- Order Details Summary Box -->
+      <div id="receipt-details-box"
+        style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 24px; margin-bottom: 28px;">
+        <div
+          style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; font-size: 0.85rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 16px; margin-bottom: 16px;">
+          <div><strong>Order ID:</strong> <span style="color: var(--accent-gold); font-family: var(--font-mono);"
+              id="rec-order-id">RG-784920</span></div>
+          <div><strong>Order Date:</strong> <span id="rec-order-date">23 Sep 2026</span></div>
+          <div><strong>Customer Name:</strong> <span id="rec-cust-name">Valued Customer</span></div>
+          <div><strong>Payment Gateway:</strong> <span style="color: #38bdf8;" id="rec-payment-method">Paytm API
+              (TXN_SUCCESS)</span></div>
+          <div style="grid-column: span 2;"><strong>Delivery Address:</strong> <span id="rec-address">Townhall,
+              Gorakhpur, UP - 273001</span></div>
+        </div>
+
+        <h3 style="font-size: 1rem; color: #fff; margin-bottom: 12px;">Purchased Items:</h3>
+        <div id="rec-items-list" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px;">
+          <!-- Dynamically populated -->
+        </div>
+
+        <div
+          style="display: flex; justify-content: space-between; font-size: 1.25rem; font-weight: 800; color: #fff; border-top: 1px solid var(--border-subtle); padding-top: 14px;">
+          <span>Total Paid (INR):</span>
+          <span style="color: var(--accent-gold);" id="rec-total-amount">₹0</span>
+        </div>
+      </div>
+
+      <!-- Non-Refundable Reminder -->
+      <div class="policy-strict-box" style="margin-bottom: 28px;">
+        <div class="policy-strict-header">
+          <span>🛡️</span> NON-REFUNDABLE POLICY NOTICE
+        </div>
+        <p class="policy-strict-text">
+          As agreed upon during checkout, all merchandise sold by Ruby Garments Udyog Enterprises is direct-to-consumer
+          manufactured and adheres strictly to a <strong>Non-Refundable & No Return Policy</strong>.
+        </p>
+      </div>
+
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+        <button class="btn-primary" onclick="window.print()">🖨️ Print Tax Invoice</button>
+        <a href="index.html" class="btn-secondary">Explore More Products</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="border: none; padding: 0;">
+      <div>
+        © 2026 <strong>Ruby Wardrobe</strong> • <strong>Ruby Garments Udyog Enterprises</strong> (Owner: <strong>Pappu
+          Singh</strong>, Townhall, Gorakhpur - 273001). All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/env.js"></script>
+  <script src="js/products-data.js"></script>
+  <script src="js/cart.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let orderData = null;
+      try {
+        const raw = sessionStorage.getItem("last_order");
+        if (raw) orderData = JSON.parse(raw);
+      } catch (e) { }
+
+      if (!orderData) {
+        orderData = {
+          orderId: "RG-" + Math.floor(100000 + Math.random() * 900000),
+          date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }),
+          name: "Customer",
+          phone: "9876543210",
+          address: "Townhall, Gorakhpur, Uttar Pradesh - 273001",
+          paymentMethod: "Paytm Gateway API (MID: UHYEFn90798504990109)",
+          total: 1398,
+          items: [
+            { name: "Oversized Vintage Graphic Tee", size: "L", quantity: 1, price: 699 },
+            { name: "Classic Luxury Pique Polo", size: "XL", quantity: 1, price: 699 }
+          ]
+        };
+      }
+
+      document.getElementById("rec-order-id").textContent = orderData.orderId;
+      document.getElementById("rec-order-date").textContent = orderData.date;
+      document.getElementById("rec-cust-name").textContent = `${orderData.name} (${orderData.phone || ''})`;
+      document.getElementById("rec-payment-method").textContent = orderData.paymentMethod;
+      document.getElementById("rec-address").textContent = orderData.address;
+      document.getElementById("rec-total-amount").textContent = `₹${orderData.total}`;
+
+      const itemsList = document.getElementById("rec-items-list");
+      if (itemsList && orderData.items) {
+        itemsList.innerHTML = orderData.items.map(it => `
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+            <span>${it.quantity}x ${it.name} (${it.size})</span>
+            <strong>₹${it.price * it.quantity}</strong>
+          </div>
+        `).join("");
+      }
+    });
+  </script>
+</body>
+
+</html>

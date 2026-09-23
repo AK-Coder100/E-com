@@ -1,4 +1,4 @@
-// Brand Wardrobe - Ruby Garments Udyog Enterprises Main App Initializer
+// Ruby Wardrobe - Ruby Garments Udyog Enterprises Main App Initializer
 
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Initial product catalog render
@@ -84,5 +84,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  console.log("Brand Wardrobe - Ruby Garments Udyog Enterprises loaded successfully.");
+  console.log("Ruby Wardrobe - Ruby Garments Udyog Enterprises loaded successfully.");
 });

@@ -1,4 +1,4 @@
-// Brand Wardrobe - Ruby Garments Udyog Enterprises Product Catalog Data
+// Ruby Wardrobe - Ruby Garments Udyog Enterprises Product Catalog Data
 
 const PRODUCTS_DATA = [
   {

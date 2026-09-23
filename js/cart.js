@@ -9,11 +9,11 @@ class StoreState {
     this.appliedCoupon = this.loadFromStorage('bw_coupon', null);
     this.freeShippingThreshold = env.FREE_SHIPPING_THRESHOLD || 999;
     this.shippingFee = env.STANDARD_SHIPPING_FEE || 79;
-    
+
     // Cart Limits from ENV
-    this.maxQuantityPerItem = env.MAX_QUANTITY_PER_ITEM || 5; 
-    this.maxTotalCartItems = env.MAX_TOTAL_CART_ITEMS || 10; 
-    this.minOrderAmount = env.MIN_ORDER_AMOUNT || 299;   
+    this.maxQuantityPerItem = env.MAX_QUANTITY_PER_ITEM || 5;
+    this.maxTotalCartItems = env.MAX_TOTAL_CART_ITEMS || 10;
+    this.minOrderAmount = env.MIN_ORDER_AMOUNT || 299;
 
     // Paytm Gateway Configuration from ENV
     this.paytmConfig = {
@@ -32,7 +32,7 @@ class StoreState {
       brandName: env.BRAND_NAME || "RB Garment Enterprises",
       owner: env.OWNER_NAME || "Pappu Singh",
       address: env.OFFICE_LOCATION || "Townhall, Gorakhpur - 273001, Uttar Pradesh, India",
-      email: env.SUPPORT_EMAIL || "support@brandwardrobe.in",
+      email: env.SUPPORT_EMAIL || "support@neoclare.com",
       phone: env.SUPPORT_PHONE || "+91 98765 43210"
     };
 
@@ -76,7 +76,7 @@ class StoreState {
 
     const selectedColor = color || (product.colors && product.colors[0] ? product.colors[0].name : "Standard");
     const itemKey = `${product.id}-${size}-${selectedColor}`;
-    
+
     const existingIndex = this.cart.findIndex(item => item.key === itemKey);
     if (existingIndex > -1) {
       const newQty = this.cart[existingIndex].quantity + quantity;
